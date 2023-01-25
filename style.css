@@ -25,7 +25,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  transition: all 0.2s ease;
 }
 *:not(i) {
   font-family: "Poppins", sans-serif;
@@ -115,7 +114,7 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
 }
 nav a {
   font-size: var(--heading-font-size-4);
@@ -127,7 +126,6 @@ nav a#logo {
 }
 nav ul a {
   color: var(--white-shade-1);
-  transition: all 0.2s ease;
 }
 
 /*-- SideMenu --*/
@@ -149,12 +147,10 @@ nav ul.active {
 }
 /*-- Link Hover Effect --*/
 nav ul a:hover {
-  color: #232323;
+  color: var(--black-shade-1);
 }
 .sticky nav ul a:hover {
-  color: #00a8fa;
-  background: #fff;
-  border-radius: 10px;
+  color: var(--base-shade-1);
 }
 /*------ Section: Hero ------*/
 section.hero {
@@ -173,7 +169,7 @@ section.hero {
 }
 .hero-img img {
   display: block;
-  width: 20%;
+  width: 100%;
 }
 .btn-container {
   display: flex;
@@ -254,7 +250,7 @@ section.hero {
       rgba(var(--grad-color-1), 0.8),
       rgba(var(--grad-color-2), 0.8)
     ),
-    url(testimonial-bg.jpg);
+    url(lq.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -334,7 +330,6 @@ section.hero {
 }
 .download-btns {
   display: flex;
-  width: 70%;
 }
 .download-btns a {
   display: inline;
@@ -397,4 +392,133 @@ footer p {
   font-size: var(--heading-font-size-3);
   border-radius: var(--border-radius-2);
   box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 991px) {
+  html {
+    font-size: 56.25%;
+  }
+  .row {
+    flex-direction: column;
+  }
+  section,
+  footer {
+    padding: 7.5rem 5rem;
+  }
+  header {
+    padding: 2.2rem 5rem;
+  }
+  section.hero {
+    grid-template-columns: 1fr;
+    background: linear-gradient(
+      45deg,
+      rgb(var(--grad-color-1)),
+      rgb(var(--grad-color-2))
+    );
+  }
+  #header-shape {
+    display: none;
+  }
+  .hero-img {
+    grid-row: 1;
+  }
+  nav ul a,
+  nav a#logo {
+    color: var(--white-shade-1);
+  }
+  .hero-content h1,
+  .hero-content p {
+    text-align: center;
+  }
+  .hero-content h1 {
+    color: var(--white-shade-1);
+  }
+  .hero-content p {
+    color: var(--white-shade-2);
+  }
+  .hero-content .primary-btn {
+    background-color: var(--white-shade-1);
+    color: var(--base-shade-1);
+  }
+  .hero-content .secondary-btn {
+    color: var(--white-shade-1);
+    border-color: var(--white-shade-1);
+  }
+  .btn-container {
+    justify-content: center;
+  }
+  .download-app img {
+    width: 50%;
+  }
+  .app-feature div {
+    justify-content: center;
+  }
+  .app-feature p {
+    text-align: center;
+  }
+  .download-app a img {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+  header {
+    padding: 2rem 4rem;
+  }
+  #ham-menu {
+    display: block;
+    color: var(--white-shade-1);
+  }
+  nav a#logo,
+  #ham-menu {
+    font-size: var(--heading-font-size-2);
+  }
+  nav ul {
+    background-color: var(--black-shade-1);
+    position: fixed;
+    left: -100vw;
+    top: 70.4px;
+    height: calc(100vh - 70.4px);
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: 1s;
+    gap: 0;
+  }
+  nav ul a {
+    font-size: var(--heading-font-size-3);
+  }
+  .sticky nav ul a {
+    color: var(--white-shade-1);
+  }
+  nav ul a:hover {
+    color: var(--base-shade-1);
+  }
+  #scroll-top {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+@media only screen and (max-width: 575px) {
+  html {
+    font-size: 46.87%;
+  }
+  header {
+    padding: 2rem 3rem;
+  }
+  section,
+  footer {
+    padding: 7.5rem 3rem;
+  }
+  .features .column {
+    padding: 4rem 2rem;
+  }
+  nav ul {
+    top: 65.18px;
+    height: calc(100vh - 65.18px);
+  }
 }
